@@ -115,19 +115,19 @@ metadata:
   name: ${APP_NAME}
   namespace: ${NAMESPACE}
   labels:
-    app: ${APP_NAME}
-    commit: ${env.GIT_COMMIT.substring(0,7)}
-    build: ${env.BUILD_NUMBER}
+    app: "${APP_NAME}"
+    commit: "${env.GIT_COMMIT.substring(0,7)}"
+    build: "${env.BUILD_NUMBER}"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ${APP_NAME}
+      app: "${APP_NAME}"
   template:
     metadata:
       labels:
-        app: ${APP_NAME}
-        commit: ${env.GIT_COMMIT.substring(0,7)}
+        app: "${APP_NAME}"
+        commit: "${env.GIT_COMMIT.substring(0,7)}"
     spec:
       containers:
       - name: ${APP_NAME}
@@ -174,7 +174,7 @@ metadata:
   namespace: ${NAMESPACE}
 spec:
   selector:
-    app: ${APP_NAME}
+    app: "${APP_NAME}"
   ports:
   - port: 80
     targetPort: 3000
